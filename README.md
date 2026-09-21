@@ -19,21 +19,21 @@ The lab is designed to simulate a realistic DevOps workflow with:
 ```mermaid
 flowchart LR
     User[End User / Browser] --> Internet[Internet]
-    Internet --> ALB[Application Load Balancer\nAWS ALB]
-    ALB --> TG[Target Group\nPort 80]
+    Internet --> ALB[Application Load Balancer<br/>AWS ALB]
+    ALB --> TG[Target Group<br/>Port 80]
 
-    TG --> EC2A[EC2 Instance 1\nUbuntu + Nginx]
-    TG --> EC2B[EC2 Instance 2\nUbuntu + Nginx]
-    TG --> EC2C[EC2 Instance 3\nUbuntu + Nginx]
+    TG --> EC2A[EC2 Instance 1<br/>Ubuntu + Nginx]
+    TG --> EC2B[EC2 Instance 2<br/>Ubuntu + Nginx]
+    TG --> EC2C[EC2 Instance 3<br/>Ubuntu + Nginx]
 
-    EC2A --> VPC[AWS VPC\nCustom Network]
+    EC2A --> VPC[AWS VPC<br/>Custom Network]
     EC2B --> VPC
     EC2C --> VPC
 
     VPC --> IGW[Internet Gateway]
     IGW --> Internet
 
-    EC2A -. Security Group .-> SG[HTTP / SSH Access\nAWS Security Group]
+    EC2A -. Security Group .-> SG[HTTP / SSH Access<br/>AWS Security Group]
     EC2B -. Security Group .-> SG
     EC2C -. Security Group .-> SG
     ALB -. HTTP traffic .-> SG
@@ -44,9 +44,9 @@ flowchart LR
 ```mermaid
 flowchart TD
     Dev[Developer] --> TF[Terraform Configuration]
-    TF --> Vars[terraform.tfvars.dev / terraform.tfvars.prod]
-    Vars --> WS[Terraform Workspace\n(dev / prod)]
-    WS --> AWS[AWS Provider\nus-east-1]
+    TF --> Vars[tfvars.dev<br/>tfvars.prod]
+    Vars --> WS[Terraform Workspace<br/>dev / prod]
+    WS --> AWS[AWS Provider<br/>us-east-1]
     AWS --> VPC[Custom VPC + Subnets + IGW]
     AWS --> EC2[EC2 Instances]
     AWS --> ALB[Optional ALB in Prod]
