@@ -1,0 +1,32 @@
+# Local .terraform directories (Plugins and modules)
+**/.terraform/*
+.terraform/
+.terraform.lock.hcl
+
+# Terraform State Files (SENSITIVE - NEVER COMMIT)
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+crash.log
+crash.*.log
+
+# Terraform Workspace state directory
+.terraform.tfstate.d/
+
+# CLI configuration and variable overrides
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Ignore sensitive variable files (if you keep passwords/keys in them)
+# Note: If your project evaluation requires sharing dev/prod tfvars,
+# you can comment out the next line:
+# *.tfvars
+
+# OS and Editor Specific files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log
